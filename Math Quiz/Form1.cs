@@ -113,8 +113,9 @@ namespace Math_Quiz
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
                 startButton.Enabled = true;
+                timeLabel.BackColor = Color.WhiteSmoke;
             }
-            else if (timeLeft > 0)
+            else if (timeLeft > 0 )
             {
                 // If CheckTheAnswer() return false, keep counting
                 // down. Decrease the time left by one second and 
@@ -122,6 +123,10 @@ namespace Math_Quiz
                 // Time Left label.
                 timeLeft--;
                 timeLabel.Text = timeLeft + " seconds";
+                if (timeLeft < 11)
+                {
+                    timeLabel.BackColor = Color.Red;
+                }
             }
             else
             {
@@ -135,6 +140,7 @@ namespace Math_Quiz
                 product.Value = multiplicand * multiplier;
                 quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
+                timeLabel.BackColor = Color.WhiteSmoke;
             }
         }
 

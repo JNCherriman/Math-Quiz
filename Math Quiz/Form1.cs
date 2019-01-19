@@ -170,6 +170,12 @@ namespace Math_Quiz
                 answerBox.Select(0, lengthOfAnswer);
             }
         }
+
+        // Display the current date somewhere on the form using this format: 27 August 2020.
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = DateTime.Now.ToLongDateString();
+        }
     }
 
     

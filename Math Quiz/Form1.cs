@@ -26,6 +26,11 @@ namespace Math_Quiz
         int addend1;
         int addend2;
 
+        // These integer variables store the numbers 
+        // for the subtraction problem. 
+        int minuend;
+        int subtrahend;
+
         // This integer variable keeps track of the 
         // remaining time.
         int timeLeft;
@@ -52,6 +57,13 @@ namespace Math_Quiz
             // This step makes sure its value is zero before
             // adding any values to it.
             sum.Value = 0;
+
+            // Fill in the subtraction problem.
+            minuend = randomizer.Next(1, 101);
+            subtrahend = randomizer.Next(1, minuend);
+            minusLeftLabel.Text = minuend.ToString();
+            minusRightLabel.Text = subtrahend.ToString();
+            difference.Value = 0;
 
             // Start the timer.
             timeLeft = 30;
@@ -104,7 +116,8 @@ namespace Math_Quiz
         /// <returns>True if the answer's correct, false otherwise.</returns>
         private bool CheckTheAnswer()
         {
-            if (addend1 + addend2 == sum.Value)
+            if ((addend1 + addend2 == sum.Value) 
+                && (minuend - subtrahend == difference.Value))
                 return true;
             else
                 return false;

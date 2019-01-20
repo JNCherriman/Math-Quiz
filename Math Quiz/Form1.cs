@@ -113,7 +113,7 @@ namespace Math_Quiz
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
                 startButton.Enabled = true;
-                timeLabel.BackColor = Color.WhiteSmoke;
+                timeLabel.BackColor = SystemColors.Control;
             }
             else if (timeLeft > 0 )
             {
